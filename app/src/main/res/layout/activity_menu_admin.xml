@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MenuAdminActivity"
+    android:focusable="auto"
+    android:orientation="vertical"
+    android:background="#FDFEFE">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:fontFamily="cursive"
+        android:text="Administrador"
+        android:textSize="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:fontFamily="cursive"
+        android:text="Ristorante"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/adminCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#00BCD4"
+        android:ems="20"
+        android:fontFamily="monospace"
+        android:onClick="eventAdd"
+        android:singleLine="true"
+        android:text="Gestión de Categorías"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/adminDishes"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#00BCD4"
+        android:ems="20"
+        android:onClick="eventAdd"
+        android:text="Gestion de platillos" />
+
+    <Button
+        android:id="@+id/adminES"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#00BCD4"
+        android:ems="20"
+        android:onClick="eventAdd"
+        android:text="Gestión de entradas y salidas" />
+
+</LinearLayout>
