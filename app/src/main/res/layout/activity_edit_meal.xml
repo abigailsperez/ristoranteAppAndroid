@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.EditMenuActivity"
+    tools:context=".view.EditMealActivity"
     android:orientation="vertical"
     android:focusable="auto"
     android:background="#FDFEFE">
@@ -20,7 +20,7 @@
         android:textSize="50dp" />
 
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/name_m"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Nombre"
@@ -35,7 +35,7 @@
         />
 
     <EditText
-        android:id="@+id/category"
+        android:id="@+id/category_m"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Categoría"
@@ -43,14 +43,14 @@
         android:layout_marginTop="25dp"
         android:ems="15"
         android:focusable="true"
-        android:inputType="text"
+        android:inputType="numberDecimal"
         android:maxLength="30"
         android:minHeight="48dp"
         android:singleLine="true"
         />
 
     <EditText
-        android:id="@+id/price"
+        android:id="@+id/price_m"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Precio"
@@ -64,11 +64,41 @@
         android:singleLine="true"
         />
 
+    <EditText
+        android:id="@+id/available"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Habilitar"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:ems="15"
+        android:focusable="true"
+        android:inputType="numberDecimal"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:singleLine="true"
+        />
+    <Button
+        android:id="@+id/button_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        android:onClick="eventAdd"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="42dp"
+        android:backgroundTint="#E83B29 "
+        android:ems="13"
+        android:fontFamily="monospace"
+        android:textStyle="bold"
+        android:singleLine="true"
+        />
+
     <Button
         android:id="@+id/button_addcategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Guardar"
+        android:onClick="editMeal"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="42dp"
         android:backgroundTint="#52BE80 "

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDFEFE"
-    android:focusable="auto"
+    tools:context=".view.AddBillActivity"
     android:orientation="vertical"
-    tools:context=".view.AddCategoryActivity">
+    android:focusable="auto"
+    android:background="#FDFEFE">>
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,54 +15,60 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:fontFamily="cursive"
-        android:text="Agregar Categoría"
+        android:text="Agregar Cuenta"
         android:textSize="50dp" />
 
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:ems="15"
-        android:focusable="true"
-        android:hint="Nombre"
-        android:inputType="text"
-        android:maxLength="30"
-        android:minHeight="48dp"
-        android:singleLine="true" />
+        android:text="Mesa"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Spinner
+        android:id="@+id/opciones"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:text="Mesero"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 
     <Button
         android:id="@+id/button_addcategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Guardar"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="42dp"
         android:backgroundTint="#52BE80 "
         android:ems="13"
         android:fontFamily="monospace"
-        android:onClick="eventButtonAdd"
+        android:textStyle="bold"
         android:singleLine="true"
-        android:text="Guardar"
-        android:textStyle="bold" />
+        />
 
     <Button
         android:id="@+id/button_viewcategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Ver cuentas"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="42dp"
         android:backgroundTint="#52BE80 "
         android:ems="13"
         android:fontFamily="monospace"
-        android:onClick="viewCategorys"
+        android:textStyle="bold"
         android:singleLine="true"
-        android:text="Ver categorías"
-        android:textStyle="bold" />
+        />
 
     <TableLayout
-        android:id="@+id/table_category"
+        android:id="@+id/table_bills"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="50dp"
@@ -76,17 +83,27 @@
                 android:layout_column="0"
                 android:layout_weight="1">
             </TextView>
-            <TextView android:text="Categoría"
-                android:layout_width="150dp"
-                android:layout_column="3"
-                android:layout_weight="1">
-            </TextView>
-            <TextView android:text="Acciones"
+
+            <TextView
+                android:text="Mesa"
                 android:layout_width="100dp"
-                android:layout_column="4"
-                android:layout_weight="1">
-            </TextView>
+                android:layout_column="3"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_column="3"
+                android:layout_weight="1"
+                android:text="Mesero" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_column="3"
+                android:layout_weight="1"
+                android:text="Acciones" />
+
         </TableRow>
+
 
         <TableRow
             android:layout_width="match_parent"

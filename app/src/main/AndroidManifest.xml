@@ -13,19 +13,37 @@
         android:theme="@style/Theme.RistoranteHttp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".view.EditBillActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ShowInOutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".item_row"
+            android:exported="false" />
+        <activity
+            android:name=".view.ShowBillsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ShowMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.AddMealsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.AddBillActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.ShowCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".view.EditMenuActivity"
+            android:name=".view.EditMealActivity"
             android:exported="false" />
         <activity
-            android:name=".view.AddMenuActivity"
+            android:name=".view.AddMealActivity"
             android:exported="false" />
         <activity
             android:name=".view.EditCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.AdminCategory"
             android:exported="false" />
         <activity
             android:name=".view.MenuAdminActivity"

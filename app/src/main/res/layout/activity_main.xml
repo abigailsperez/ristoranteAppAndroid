@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:focusable="auto"
     android:orientation="vertical"
-    android:background="#FDFEFE">
+    android:background="#FDFEFE"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -17,12 +18,19 @@
         android:text="Ristorante"
         android:textSize="50dp" />
 
+    <ImageView
+        android:src="@drawable/ic_logo"
+        android:layout_marginTop="30dp"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center" />
+
     <EditText
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:ems="15"
         android:focusable="true"
         android:hint="Correo electrónico"

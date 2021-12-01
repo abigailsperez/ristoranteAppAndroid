@@ -9,30 +9,30 @@
     android:orientation="vertical"
     android:background="#FDFEFE">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:fontFamily="cursive"
-        android:text="Administrador"
-        android:textSize="50dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="cursive"
-        android:text="Ristorante"
-        android:textSize="25dp" />
+        android:text="Menú"
+        android:textSize="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="cursive"
+        android:text="Administrador"
+        android:textSize="40dp" />
 
     <Button
         android:id="@+id/adminCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_width="245dp"
+        android:layout_height="90dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#00BCD4"
         android:ems="20"
         android:fontFamily="monospace"
@@ -42,25 +42,25 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/adminDishes"
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:id="@+id/adminMeal"
+        android:layout_width="245dp"
+        android:layout_height="90dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="40dp"
         android:backgroundTint="#00BCD4"
         android:ems="20"
-        android:onClick="eventAdd"
+        android:onClick="eventAddMeal"
         android:text="Gestion de platillos" />
 
     <Button
         android:id="@+id/adminES"
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_width="245dp"
+        android:layout_height="90dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="40dp"
         android:backgroundTint="#00BCD4"
         android:ems="20"
-        android:onClick="eventAdd"
-        android:text="Gestión de entradas y salidas" />
+        android:onClick="eventShowInOut"
+        android:text="Reporte de entradas y salidas" />
 
 </LinearLayout>

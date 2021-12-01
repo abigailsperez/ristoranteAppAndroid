@@ -20,7 +20,7 @@ import retrofit2.Retrofit
 
 class ControllerUser {
 
-    val baseURL = "http://192.168.1.71:8080"
+    val baseURL = "http://192.168.1.68:8080"
 
     fun login(email: String, password: String) :String{
         var returnValue:String=""

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="50dp"
+    android:layout_marginRight="50dp"
+    android:layout_marginLeft="50dp">
+
+    <TextView
+        android:id="@+id/colId"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="#" />
+
+    <TextView
+        android:id="@+id/colTable"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Mesa" />
+
+    <TextView
+        android:id="@+id/colWaiter"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Mesero" />
+
+    <Button
+        android:id="@+id/button_editBill"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:onClick="tableEdit"
+        android:text="Editar"
+        android:textSize="10sp" />
+</TableRow>

@@ -18,4 +18,18 @@ class MenuAdminActivity : AppCompatActivity() {
             ,AddCategoryActivity::class.java).apply{}
         startActivity(intento)
     }
+
+    fun eventAddMeal(view: View){
+        var intento2: Intent = Intent(
+            this
+            ,AddMealActivity::class.java).apply{}
+        startActivity(intento2)
+    }
+
+    fun eventShowInOut(view: View){
+        var intento3: Intent = Intent(
+            this
+            ,ShowInOutActivity::class.java).apply{}
+        startActivity(intento3)
+    }
 }
