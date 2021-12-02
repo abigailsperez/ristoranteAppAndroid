@@ -14,6 +14,7 @@ import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.json.JSONObject
 import retrofit2.Retrofit
+import java.text.SimpleDateFormat
 import java.util.*
 
 class ControllerBill {
@@ -21,7 +22,11 @@ class ControllerBill {
 
     val baseURL = "http://192.168.1.68:8080"
 
-    fun saveBill(dinning_table:Long, user:Long, user_table:Long) {
+    fun saveBill(dinning_table:Long, user:Long) {
+
+        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+        val currentDate = sdf.format(Date())
+        System.out.println(" C DATE is  "+currentDate)
 
         // Create Retrofit
         val retrofit = Retrofit.Builder()
@@ -33,9 +38,9 @@ class ControllerBill {
 
         // Create JSON using JSONObject
         val jsonObject = JSONObject()
+        jsonObject.put("date_bill", currentDate)
         jsonObject.put("dinning_table", dinning_table)
         jsonObject.put("user", user)
-        jsonObject.put("user_table", user_table)
 
         // Convert JSONObject to String
         val jsonObjectString = jsonObject.toString()
@@ -89,7 +94,7 @@ class ControllerBill {
              */
 
             // Do the GET request and get response
-            val response = service.getCategorys()
+            val response = service.getBills()
             //val response1 = service.getCategory("2")
 
             withContext(Dispatchers.Main) {
@@ -115,7 +120,7 @@ class ControllerBill {
         }
     }
 
-    fun updateBill(name: String) {
+    fun updateBill(dinning_table:Long, user:Long) {
 
         // Create Retrofit
         val retrofit = Retrofit.Builder()
@@ -127,7 +132,8 @@ class ControllerBill {
 
         // Create JSON using JSONObject
         val jsonObject = JSONObject()
-        jsonObject.put("name", name)
+        jsonObject.put("dinning_table", dinning_table)
+        jsonObject.put("user", user)
 
         // Convert JSONObject to String
         val jsonObjectString = jsonObject.toString()
@@ -138,46 +144,8 @@ class ControllerBill {
         CoroutineScope(Dispatchers.IO).launch {
 
             // Do the PUT request and get response
-            val response = service.updateCategory(requestBody)
+            val response = service.updateBill(requestBody)
 
-            withContext(Dispatchers.Main) {
-                if (response.isSuccessful) {
-
-                    // Convert raw JSON to pretty JSON using GSON library
-                    val gson = GsonBuilder().setPrettyPrinting().create()
-                    val prettyJson = gson.toJson(
-                        JsonParser.parseString(
-                            response.body()
-                                ?.string() // About this thread blocking annotation : https://github.com/square/retrofit/issues/3255
-                        )
-                    )
-
-                    Log.d("Pretty Printed JSON :", prettyJson)
-
-                } else {
-
-                    Log.e("RETROFIT_ERROR", response.code().toString())
-
-                }
-            }
-        }
-    }
-
-    fun deleteBill() {
-
-        // Create Retrofit
-        val retrofit = Retrofit.Builder()
-            .baseUrl(baseURL)
-            .build()
-
-        // Create Service
-        val service = retrofit.create(APIService::class.java)
-
-        CoroutineScope(Dispatchers.IO).launch {
-
-            // Do the DELETE request and get response
-
-            val response = service.deleteCategory()
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
 

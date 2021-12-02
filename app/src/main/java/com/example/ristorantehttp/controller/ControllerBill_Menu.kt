@@ -1,7 +1,7 @@
 package com.example.ristorantehttp.controller
 
 import android.util.Log
-import com.example.ristorantehttp.model.entity.Menu
+import com.example.ristorantehttp.model.entity.Category
 import com.example.ristorantehttp.model.repository.APIService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -14,11 +14,14 @@ import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.json.JSONObject
 import retrofit2.Retrofit
+import java.text.SimpleDateFormat
+import java.util.*
 
-class ControllerMenu {
+class ControllerBill_Menu {
+
     val baseURL = "http://192.168.1.68:8080"
 
-    fun saveMenu(name: String, category: Int, price: Long, available: Int) {
+    fun saveBill_Menu(bill:Long, menu:Long, quantity:Long) {
 
         // Create Retrofit
         val retrofit = Retrofit.Builder()
@@ -30,10 +33,9 @@ class ControllerMenu {
 
         // Create JSON using JSONObject
         val jsonObject = JSONObject()
-        jsonObject.put("name", name)
-        jsonObject.put("category", category)
-        jsonObject.put("price", price)
-        jsonObject.put("available", available)
+        jsonObject.put("bill", bill)
+        jsonObject.put("menu", menu)
+        jsonObject.put("quantity", quantity)
 
         // Convert JSONObject to String
         val jsonObjectString = jsonObject.toString()
@@ -43,7 +45,7 @@ class ControllerMenu {
 
         CoroutineScope(Dispatchers.IO).launch {
             // Do the POST request and get response
-            val response = service.saveMenu(requestBody)
+            val response = service.saveBill_Menu(requestBody)
 
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
@@ -59,7 +61,7 @@ class ControllerMenu {
 
                     Log.d("Pretty Printed JSON :", prettyJson)
 
-                    var meal = Gson().fromJson(prettyJson, Menu::class.java) // El json convertido a instancia de category
+                    var category = Gson().fromJson(prettyJson, Category::class.java) // El json convertido a instancia de category
 
                 } else {
 
@@ -70,9 +72,9 @@ class ControllerMenu {
         }
     }
 
-   fun getMenu() {
+    fun getBill_Menu() {
 
-        // Create Retrofit
+        // Create trofit
         val retrofit = Retrofit.Builder()
             .baseUrl(baseURL)
             .build()
@@ -87,7 +89,7 @@ class ControllerMenu {
              */
 
             // Do the GET request and get response
-            val response = service.getMenu()
+            val response = service.getBill_Menu()
             //val response1 = service.getCategory("2")
 
             withContext(Dispatchers.Main) {
@@ -113,56 +115,53 @@ class ControllerMenu {
         }
     }
 
+    fun updateBill_Menu(bill:Long, menu:Long, quantity:Long) {
 
-    fun updateMenu(name: String, category: Int, price: Long, available: Int) {
+        // Create Retrofit
+        val retrofit = Retrofit.Builder()
+            .baseUrl(baseURL)
+            .build()
 
-            // Create Retrofit
-            val retrofit = Retrofit.Builder()
-                .baseUrl(baseURL)
-                .build()
+        // Create Service
+        val service = retrofit.create(APIService::class.java)
 
-            // Create Service
-            val service = retrofit.create(APIService::class.java)
+        // Create JSON using JSONObject
+        val jsonObject = JSONObject()
+        jsonObject.put("bill", bill)
+        jsonObject.put("menu", menu)
+        jsonObject.put("quantity", quantity)
 
-            // Create JSON using JSONObject
-            val jsonObject = JSONObject()
-            jsonObject.put("name", name)
-            jsonObject.put("category", category)
-            jsonObject.put("price", price)
-            jsonObject.put("available", available)
+        // Convert JSONObject to String
+        val jsonObjectString = jsonObject.toString()
 
-            // Convert JSONObject to String
-            val jsonObjectString = jsonObject.toString()
+        // Create RequestBody ( We're not using any converter, like GsonConverter, MoshiConverter e.t.c, that's why we use RequestBody )
+        val requestBody = jsonObjectString.toRequestBody("application/json".toMediaTypeOrNull())
 
-            // Create RequestBody ( We're not using any converter, like GsonConverter, MoshiConverter e.t.c, that's why we use RequestBody )
-            val requestBody = jsonObjectString.toRequestBody("application/json".toMediaTypeOrNull())
+        CoroutineScope(Dispatchers.IO).launch {
 
-            CoroutineScope(Dispatchers.IO).launch {
+            // Do the PUT request and get response
+            val response = service.updateBill_Menu(requestBody)
 
-                // Do the PUT request and get response
-                val response = service.updateMenu(requestBody)
+            withContext(Dispatchers.Main) {
+                if (response.isSuccessful) {
 
-                withContext(Dispatchers.Main) {
-                    if (response.isSuccessful) {
-
-                        // Convert raw JSON to pretty JSON using GSON library
-                        val gson = GsonBuilder().setPrettyPrinting().create()
-                        val prettyJson = gson.toJson(
-                            JsonParser.parseString(
-                                response.body()
-                                    ?.string() // About this thread blocking annotation : https://github.com/square/retrofit/issues/3255
-                            )
+                    // Convert raw JSON to pretty JSON using GSON library
+                    val gson = GsonBuilder().setPrettyPrinting().create()
+                    val prettyJson = gson.toJson(
+                        JsonParser.parseString(
+                            response.body()
+                                ?.string() // About this thread blocking annotation : https://github.com/square/retrofit/issues/3255
                         )
+                    )
 
-                        Log.d("Pretty Printed JSON :", prettyJson)
+                    Log.d("Pretty Printed JSON :", prettyJson)
 
-                    } else {
+                } else {
 
-                        Log.e("RETROFIT_ERROR", response.code().toString())
+                    Log.e("RETROFIT_ERROR", response.code().toString())
 
-                    }
                 }
             }
         }
-
+    }
 }

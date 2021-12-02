@@ -4,29 +4,28 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
-import android.widget.TableLayout
 import android.widget.Toast
 import com.example.ristorantehttp.R
-import com.example.ristorantehttp.controller.ControllerBill
-import com.example.ristorantehttp.controller.ControllerCategory
+import com.example.ristorantehttp.controller.ControllerBill_Menu
 
-class AddBillActivity : AppCompatActivity() {
+class AddBillMenuActivity : AppCompatActivity() {
 
-    private lateinit var dinning_table: EditText
-    private lateinit var user: EditText
+    private lateinit var bill: EditText
+    private lateinit var menu: EditText
+    private lateinit var quantity: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_bill)
+        setContentView(R.layout.activity_add_bill_menu)
 
-        dinning_table= findViewById(R.id.dinning_table)
-        user= findViewById(R.id.user)
+        bill= findViewById(R.id.bill)
+        menu= findViewById(R.id.menu)
+        quantity= findViewById(R.id.quantity)
     }
-
 
     fun eventButtonAddBill(view: android.view.View) {
 
-        ControllerBill().saveBill(dinning_table.text.toString().toLong(),user.text.toString().toLong())
+        ControllerBill_Menu().saveBill_Menu(bill.text.toString().toLong(),menu.text.toString().toLong(), quantity.text.toString().toLong())
 
         val notification: Toast = Toast.makeText(
             this,
@@ -42,7 +41,5 @@ class AddBillActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun viewBills(view: android.view.View) {
-        ControllerBill().getBills()
-    }
+
 }

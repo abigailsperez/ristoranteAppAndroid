@@ -15,7 +15,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:fontFamily="cursive"
-        android:text="Editar Categoría"
+        android:text="Editar Cuenta"
         android:textSize="50dp" />
 
     <EditText

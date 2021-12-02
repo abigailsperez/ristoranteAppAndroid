@@ -13,6 +13,15 @@
         android:theme="@style/Theme.RistoranteHttp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".view.ShowBillMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.EditBillMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.AddBillMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.EditBillActivity"
             android:exported="false" />
         <activity

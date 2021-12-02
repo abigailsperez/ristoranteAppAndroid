@@ -7,5 +7,4 @@ data class Bill(
     var date_bill: Date,
     var dinning_table: Long,
     var user: Long,
-    var user_table: Long
 )

@@ -16,7 +16,7 @@ class ControllerSession {
 
     fun getSession() {
 
-        // Create trofit
+        // Create retrofit
         val retrofit = Retrofit.Builder()
             .baseUrl(baseURL)
             .build()

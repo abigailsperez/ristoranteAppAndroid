@@ -18,29 +18,37 @@
         android:text="Agregar Cuenta"
         android:textSize="50dp" />
 
-    <TextView
-        android:layout_gravity="center_horizontal"
-        android:text="Mesa"
-        android:textSize="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
-    <Spinner
-        android:id="@+id/opciones"
-        android:layout_gravity="center_horizontal"
+    <EditText
+        android:id="@+id/dinning_table"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Mesero"
-        android:textSize="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_marginTop="50dp"
+        android:ems="15"
+        android:focusable="true"
+        android:hint="Mesa"
+        android:inputType="text"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:singleLine="true" />
 
+    <EditText
+        android:id="@+id/user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:ems="15"
+        android:focusable="true"
+        android:hint="Mesero"
+        android:inputType="text"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:singleLine="true" />
 
     <Button
-        android:id="@+id/button_addcategory"
+        android:id="@+id/button_addbill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Guardar"
@@ -48,16 +56,18 @@
         android:layout_marginTop="42dp"
         android:backgroundTint="#52BE80 "
         android:ems="13"
+        android:onClick="eventButtonAddBill"
         android:fontFamily="monospace"
         android:textStyle="bold"
         android:singleLine="true"
         />
 
     <Button
-        android:id="@+id/button_viewcategory"
+        android:id="@+id/button_viewbills"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ver cuentas"
+        android:onClick="viewBills"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="42dp"
         android:backgroundTint="#52BE80 "
