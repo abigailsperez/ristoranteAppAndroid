@@ -19,7 +19,7 @@ import java.util.*
 
 class ControllerBill_Menu {
 
-    val baseURL = "http://192.168.1.68:8080"
+    val baseURL = "http://192.168.1.64:8080"
 
     fun saveBill_Menu(bill:Long, menu:Long, quantity:Long) {
 

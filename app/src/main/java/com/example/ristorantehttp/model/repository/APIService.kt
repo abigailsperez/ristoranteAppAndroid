@@ -11,10 +11,10 @@ interface APIService {
     @POST("/api/v1/category/save")
     suspend fun saveCategory(@Body requestBody: RequestBody): Response<ResponseBody>
 
-    @GET("/api/v1/category/list/10")
+    @GET("/api/v1/category/list/8")
     suspend fun getCategorys(): Response<ResponseBody>
 
-    @PUT("/api/v1/category/23")
+    @PUT("/api/v1/category/save")
     suspend fun updateCategory(@Body requestBody: RequestBody): Response<ResponseBody>
 
    /*@DELETE("/api/v1/category/3")

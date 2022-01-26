@@ -12,8 +12,10 @@ import com.example.ristorantehttp.view.MenuAdminActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var email:EditText
-    private lateinit var password:EditText
+    private lateinit var email: EditText
+    private lateinit var password: EditText
+    /*lateinit var recyclerViewAdapter: RecyclerViewAdapter
+    lateinit var viewModel: MainActivityViewModel*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,9 +29,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun eventLogin(view: android.view.View) {
-        var value=ControllerUser().login(email.text.toString(), password.text.toString())
+        var value = ControllerUser().login(email.text.toString(), password.text.toString())
 
-        if (value==""){
+        if (value == "") {
             val notification: Toast = Toast.makeText(
                 this,
                 "Inicio de sesión exitoso",
@@ -43,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                 MenuAdminActivity::class.java
             ).apply {}
             startActivity(intent)
-        }else{
+        } else {
             val notification: Toast = Toast.makeText(
                 this,
                 "Datos incorrectos",
@@ -54,11 +56,12 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun showMenuAdmin(view:View){
+    fun showMenuAdmin(view: View) {
         /* Vamos a agregar la nueva actividad */
-        val intent:Intent = Intent(
+        val intent: Intent = Intent(
             this,
-            MenuAdminActivity::class.java).apply{}
+            MenuAdminActivity::class.java
+        ).apply {}
         startActivity(intent)
     }
 

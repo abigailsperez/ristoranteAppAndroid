@@ -2,31 +2,37 @@ package com.example.ristorantehttp.controller
 
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import com.example.ristorantehttp.model.entity.Category
 import com.example.ristorantehttp.model.entity.User
 import com.example.ristorantehttp.model.repository.APIService
 import com.example.ristorantehttp.view.AddCategoryActivity
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.google.gson.JsonNull
 import com.google.gson.JsonParser
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.OkHttpClient
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.ResponseBody
+import okhttp3.logging.HttpLoggingInterceptor
 import org.json.JSONArray
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 class ControllerCategory {
 
     val baseURL = "http://192.168.1.68:8080"
+
 
     fun saveCategory(name: String) {
 
@@ -41,7 +47,7 @@ class ControllerCategory {
         // Create JSON using JSONObject
         val jsonObject = JSONObject()
         jsonObject.put("name", name)
-        jsonObject.put("restaurant", 10)
+        jsonObject.put("restaurant", 8)
 
         // Convert JSONObject to String
         val jsonObjectString = jsonObject.toString()
@@ -80,13 +86,14 @@ class ControllerCategory {
 
     fun getCategorys() {
 
-         // Create trofit
+         // Create retrofit
          val retrofit = Retrofit.Builder()
              .baseUrl(baseURL)
              .build()
 
          // Create Service
          val service = retrofit.create(APIService::class.java)
+
 
          CoroutineScope(Dispatchers.IO).launch {
              /*
@@ -119,6 +126,7 @@ class ControllerCategory {
                  }
              }
          }
+        return
     }
 
     fun updateCategory(name: String) {
@@ -133,7 +141,9 @@ class ControllerCategory {
 
          // Create JSON using JSONObject
          val jsonObject = JSONObject()
+        jsonObject.put("id", 1)
          jsonObject.put("name", name)
+         jsonObject.put("restaurant", 2)
 
          // Convert JSONObject to String
          val jsonObjectString = jsonObject.toString()

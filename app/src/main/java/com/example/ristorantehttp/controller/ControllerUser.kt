@@ -22,7 +22,7 @@ class ControllerUser {
 
     val baseURL = "http://192.168.1.68:8080"
 
-    fun login(email: String, password: String) :String{
+    fun login(email: String, password: String) : String{
         var returnValue:String=""
         // Create Retrofit
         val retrofit = Retrofit.Builder()
@@ -36,6 +36,7 @@ class ControllerUser {
         val jsonObject = JSONObject()
         jsonObject.put("email", email)
         jsonObject.put("password", password)
+
 
         // Convert JSONObject to String
         val jsonObjectString = jsonObject.toString()

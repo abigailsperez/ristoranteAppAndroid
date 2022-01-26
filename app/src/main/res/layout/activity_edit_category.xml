@@ -15,7 +15,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:fontFamily="cursive"
-        android:text="Editar Cuenta"
+        android:text="Editar Categoría"
         android:textSize="50dp" />
 
     <EditText
@@ -33,21 +33,6 @@
         android:singleLine="true"
         />
 
-    <Button
-        android:id="@+id/button_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cancelar"
-        android:onClick="eventAdd"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="42dp"
-        android:backgroundTint="#E83B29 "
-        android:ems="13"
-        android:fontFamily="monospace"
-        android:textStyle="bold"
-        android:singleLine="true"
-        />
-
 
     <Button
         android:id="@+id/button_addcategory"
@@ -58,6 +43,21 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="42dp"
         android:backgroundTint="#52BE80 "
+        android:ems="13"
+        android:fontFamily="monospace"
+        android:textStyle="bold"
+        android:singleLine="true"
+        />
+
+    <Button
+        android:id="@+id/button_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        android:onClick="eventAdd"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="42dp"
+        android:backgroundTint="#999999"
         android:ems="13"
         android:fontFamily="monospace"
         android:textStyle="bold"

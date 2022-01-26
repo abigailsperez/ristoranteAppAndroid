@@ -17,26 +17,36 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Nombre" />
+        android:text="Nombre"
+        android:fontFamily="monospace"
+        android:singleLine="true"
+        android:textStyle="bold"/>
     <TextView
         android:id="@+id/colDate"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Fecha" />
+        android:text="Fecha"
+        android:fontFamily="monospace"
+        android:singleLine="true"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/colIn"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Hora de entrada" />
+        android:text="Hora de entrada"
+        android:fontFamily="monospace"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/colOut"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Hora de salida" />
+        android:text="Hora de salida"
+        android:fontFamily="monospace"
+        android:textStyle="bold"/>
 
 </TableRow>

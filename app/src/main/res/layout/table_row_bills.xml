@@ -12,21 +12,30 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="#" />
+        android:text="#"
+        android:fontFamily="monospace"
+        android:singleLine="true"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/colTable"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Mesa" />
+        android:text="Mesa"
+        android:fontFamily="monospace"
+        android:singleLine="true"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/colWaiter"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Mesero" />
+        android:text="Mesero"
+        android:fontFamily="monospace"
+        android:singleLine="true"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/button_editBill"
@@ -34,5 +43,9 @@
         android:layout_height="wrap_content"
         android:onClick="tableEdit"
         android:text="Editar"
-        android:textSize="10sp" />
+        android:textSize="12sp"
+        android:backgroundTint="#E9967A"
+        android:fontFamily="monospace"
+        android:singleLine="true"
+        android:textStyle="bold"/>
 </TableRow>

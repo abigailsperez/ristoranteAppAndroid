@@ -22,4 +22,6 @@ class ShowCategoryActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+
+
 }

@@ -16,7 +16,7 @@ import org.json.JSONObject
 import retrofit2.Retrofit
 
 class ControllerMenu {
-    val baseURL = "http://192.168.1.68:8080"
+    val baseURL = "http://192.168.1.64:8080"
 
     fun saveMenu(name: String, category: Int, price: Long, available: Int) {
 

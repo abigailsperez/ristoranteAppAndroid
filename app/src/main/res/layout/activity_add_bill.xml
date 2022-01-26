@@ -91,26 +91,38 @@
             <TextView android:text="#"
                 android:layout_width="50dp"
                 android:layout_column="0"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:textStyle="bold">
             </TextView>
 
             <TextView
                 android:text="Mesa"
                 android:layout_width="100dp"
                 android:layout_column="3"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="100dp"
                 android:layout_column="3"
                 android:layout_weight="1"
-                android:text="Mesero" />
+                android:text="Mesero"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="100dp"
                 android:layout_column="3"
                 android:layout_weight="1"
-                android:text="Acciones" />
+                android:text="Acciones"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:textStyle="bold"/>
 
         </TableRow>
 

@@ -21,28 +21,43 @@
             android:id="@+id/Cabecera"
             style="@style/CardView.Dark">
             <TextView android:text="#"
-                android:layout_width="50dp"
+                android:layout_width="25dp"
                 android:layout_column="0"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:textStyle="bold"/>
             <TextView android:text="Nombre"
                 android:layout_width="100dp"
                 android:layout_column="1"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:textStyle="bold">
             </TextView>
             <TextView android:text="Precio"
                 android:layout_width="100dp"
                 android:layout_column="2"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:textStyle="bold">
             </TextView>
             <TextView android:text="Categoría"
                 android:layout_width="100dp"
                 android:layout_column="3"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:textStyle="bold">
             </TextView>
             <TextView android:text="Acciones"
                 android:layout_width="100dp"
                 android:layout_column="4"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:textStyle="bold">
             </TextView>
         </TableRow>
 

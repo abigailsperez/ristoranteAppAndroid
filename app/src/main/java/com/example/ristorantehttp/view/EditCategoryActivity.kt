@@ -20,6 +20,7 @@ class EditCategoryActivity : AppCompatActivity() {
 
     fun editCategory(view: android.view.View) {
         ControllerCategory().updateCategory(name.text.toString())
+        eventAdd(view)
     }
 
     fun eventAdd(view: View){

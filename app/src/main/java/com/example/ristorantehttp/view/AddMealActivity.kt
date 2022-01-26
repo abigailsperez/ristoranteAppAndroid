@@ -14,7 +14,6 @@ class AddMealActivity : AppCompatActivity() {
     private lateinit var category: EditText
     private lateinit var price: EditText
     private lateinit var available: EditText
-    private lateinit var spinner: Spinner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
